@@ -1,0 +1,1709 @@
+/* =============================================
+   GLOBAL — Reset, Body, Container
+   ============================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #dce1e7;
+}
+
+main, .auth-page, .form-page {
+    flex: 1;
+}
+
+.container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.container h2, .container h3 {
+    color: #2c3e56;
+}
+
+
+/* =============================================
+   GLOBAL — Header & Navigation
+   ============================================= */
+
+.header {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e56;
+    border-bottom: 3px solid #FFD700;
+    position: relative;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.header-logo {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+}
+
+.header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.header nav a:hover {
+    color: #FFD700;
+}
+
+/* Hamburger toggle - hidden on desktop */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+.nav-toggle:hover span {
+    background: #FFD700;
+}
+
+
+/* =============================================
+   GLOBAL — Buttons
+   ============================================= */
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2c3e56;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #1a2638;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn.secondary:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 13px;
+    background: #2c3e56;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-small:hover {
+    background: #1a2638;
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.btn-outline {
+    padding: 10px 18px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+
+/* =============================================
+   GLOBAL — Cards & Scholarship Grid
+   ============================================= */
+
+.scholarship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #2c3e56;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.card h3, .card h4 {
+    color: #2c3e56;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.card p strong {
+    color: #2c3e56;
+    font-weight: 600;
+}
+
+.card .btn {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.card-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+.no-results p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+
+/* =============================================
+   GLOBAL — Flash Messages
+   ============================================= */
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #28a745;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #dc3545;
+    margin-bottom: 20px;
+}
+
+
+/* =============================================
+   GLOBAL — Footer
+   ============================================= */
+
+footer {
+    background: #2c3e56;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* =============================================
+   GLOBAL — Stats Grid
+   (admin_dashboard, manage_providers, manage_scholarships, index)
+   ============================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-top: 4px solid #2c3e56;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card.highlight {
+    border-top-color: #FFD700;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: #2c3e56;
+    margin: 0 0 10px 0;
+}
+
+.stat-card p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* =============================================
+   GLOBAL — Data Tables
+   (manage_providers, manage_scholarships, admin_dashboard)
+   ============================================= */
+
+.section {
+    margin: 40px 0;
+}
+
+.section h3 {
+    color: #2c3e56;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.data-table thead {
+    background: #2c3e56;
+    color: #ffffff;
+}
+
+.data-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #555;
+}
+
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.action-cell {
+    white-space: nowrap;
+    display: flex;
+    gap: 6px;
+}
+
+/* Status badges */
+.status-active   { color: #28a745; font-weight: 600; }
+.status-inactive { color: #6c757d; font-weight: 600; }
+.status-pending  { color: #ffc107; font-weight: 600; }
+.status-verified { color: #28a745; font-weight: 600; }
+.status-rejected { color: #dc3545; font-weight: 600; }
+
+
+/* Prominent block message for pending/rejected provider login (auth/login.php) */
+.modal-message {
+    border-left: 4px solid #dc3545;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-message strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #721c24;
+}
+
+.modal-message p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #721c24;
+}
+
+/* =============================================
+   GLOBAL — Filter / Search Bar
+   (student/dashboard, manage_providers, manage_scholarships)
+   ============================================= */
+
+.filter-bar {
+    margin: 25px 0 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border: 1px solid #eee;
+}
+
+.filter-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-form input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 11px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f9f9f9;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.filter-form input[type="text"]:focus {
+    outline: none;
+    border-color: #2c3e56;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(44,62,86,0.08);
+}
+
+.filter-form select {
+    padding: 11px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-form select:focus {
+    outline: none;
+    border-color: #2c3e56;
+    box-shadow: 0 0 0 3px rgba(44,62,86,0.08);
+}
+
+.filter-form .btn {
+    padding: 11px 22px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.filter-form .btn-cancel {
+    padding: 11px 18px;
+    background: #f0f0f0;
+    color: #555;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.filter-form .btn-cancel:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.result-count {
+    color: #666;
+    margin: 20px 0 5px;
+    font-size: 14px;
+}
+
+
+/* =============================================
+   GLOBAL — Forms
+   (add_scholarship, edit_scholarship, student/profile, provider/profile)
+   ============================================= */
+
+.form-page {
+    min-height: calc(100vh - 80px);
+    background: #dce1e7;
+    padding: 40px 20px;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border-top: 4px solid #2c3e56;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-card h2 {
+    color: #2c3e56;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #2c3e56;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group small {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.scholarship-form input[type="text"],
+.scholarship-form input[type="email"],
+.scholarship-form input[type="number"],
+.scholarship-form input[type="date"],
+.scholarship-form select,
+.scholarship-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.scholarship-form input:focus,
+.scholarship-form select:focus,
+.scholarship-form textarea:focus {
+    outline: none;
+    border-color: #2c3e56;
+    box-shadow: 0 0 0 3px rgba(44,62,86,0.1);
+}
+
+.scholarship-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-actions .btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form-actions .btn-cancel {
+    flex: 1;
+    padding: 12px;
+    background: #6c757d;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.form-actions .btn-cancel:hover {
+    background: #5a6268;
+}
+
+/* Checkbox group — add/edit scholarship fields */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.checkbox-group label:hover {
+    background: #eef1f5;
+    color: #2c3e56;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2c3e56;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+/* =============================================
+   GLOBAL — Scholarship Detail
+   (student/scholarship_view.php)
+   ============================================= */
+
+.scholarship-detail {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-top: 4px solid #2c3e56;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.scholarship-detail h2 {
+    color: #2c3e56;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 15px;
+}
+
+.detail-section {
+    margin-bottom: 30px;
+}
+
+.detail-section h3 {
+    color: #2c3e56;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-section p {
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.detail-section p strong {
+    color: #2c3e56;
+}
+
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =============================================
+   AUTH PAGES — login.php, register.php,
+   register_student.php, register_provider.php
+   ============================================= */
+
+.auth-page {
+    min-height: calc(100vh - 80px);
+    background: #dce1e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.auth-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border-top: 4px solid #2c3e56;
+    max-width: 450px;
+    width: 100%;
+}
+
+.auth-card h2 {
+    color: #2c3e56;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.auth-form input,
+.auth-form select,
+.auth-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.auth-form input:focus,
+.auth-form select:focus,
+.auth-form textarea:focus {
+    outline: none;
+    border-color: #2c3e56;
+    box-shadow: 0 0 0 3px rgba(44,62,86,0.1);
+}
+
+.auth-form button[type="submit"],
+.auth-form .btn {
+    width: 100%;
+    padding: 12px;
+    background: #2c3e56;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-form button[type="submit"]:hover,
+.auth-form .btn:hover {
+    background: #1a2638;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: #2c3e56;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-footer a:hover {
+    color: #FFD700;
+}
+
+.auth-card .error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 5px;
+    border-left: 4px solid #dc3545;
+    margin-bottom: 20px;
+}
+
+.auth-card .success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 5px;
+    border-left: 4px solid #28a745;
+    margin-bottom: 20px;
+}
+
+/* Register choice page (auth/register.php) */
+.register-choice-card {
+    max-width: 460px;
+}
+
+.register-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin: -15px 0 28px;
+}
+
+.register-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.register-choice-btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+/* =============================================
+   PROFILE PAGES — student/profile.php, provider/profile.php
+   ============================================= */
+
+.profile-meta {
+    background: #f4f6f8;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 28px;
+    border-left: 4px solid #FFD700;
+}
+
+.profile-meta p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.profile-meta p strong {
+    color: #2c3e56;
+}
+
+
+/* =============================================
+   STUDENT DASHBOARD — student/dashboard.php
+   ============================================= */
+
+.student-dashboard {
+    padding: 50px 60px 70px;
+}
+
+.student-dashboard .scholarship-grid {
+    margin-top: 25px;
+}
+
+/* Dashboard sections (matching, deadline, main listing) */
+.dashboard-section {
+    margin-bottom: 50px;
+}
+
+.section-heading {
+    font-size: 1.25rem;
+    color: #2c3e56;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.deadline-count {
+    background: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 12px;
+    vertical-align: middle;
+}
+
+/* Matched card — gold top border */
+.card-matched {
+    border-top-color: #FFD700;
+    position: relative;
+}
+
+/* Deadline card — red top border */
+.card-deadline {
+    border-top-color: #dc3545;
+    position: relative;
+}
+
+/* Deadline badges on cards */
+.deadline-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.deadline-badge.urgent {
+    background: #f8d7da;
+    color: #c0392b;
+}
+
+.deadline-badge.soon {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Profile completion prompt */
+.profile-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    border-left: 4px solid #FFD700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex-wrap: wrap;
+}
+
+.profile-prompt-text strong {
+    display: block;
+    color: #2c3e56;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.profile-prompt-text p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* No match message */
+.no-match-msg {
+    color: #666;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+.no-match-msg a {
+    color: #2c3e56;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.no-match-msg a:hover {
+    color: #FFD700;
+}
+
+
+/* =============================================
+   PROVIDER DASHBOARD — provider/provider_dashboard.php
+   ============================================= */
+
+.dashboard-actions {
+    margin: 20px 0;
+}
+
+.provider-dashboard h2,
+.provider-dashboard h3,
+.provider-dashboard .dashboard-actions,
+.provider-dashboard .success-message {
+    text-align: center;
+}
+
+.provider-dashboard .scholarship-grid {
+    justify-content: center;
+}
+
+.provider-dashboard .scholarship-grid > p,
+.provider-dashboard > p {
+    text-align: center;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+
+/* =============================================
+   ADMIN DASHBOARD — admin/admin_dashboard.php
+   Uses: .container, .stats-grid, .stat-card,
+   .section, .table-container, .data-table
+   (all defined in GLOBAL sections above)
+   ============================================= */
+
+
+/* =============================================
+   HOMEPAGE — index.php
+   ============================================= */
+
+/* Darker body background for index only */
+.index-page {
+    background: #b0bac5;
+}
+
+/* Hero */
+.hero {
+    padding: 80px 60px;
+    background: linear-gradient(135deg, #2c3e56 0%, #1a2638 100%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero h2 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    color: #FFD700;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #ccd6e0;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    margin-top: 10px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 28px;
+    margin: 8px;
+    display: inline-block;
+    text-decoration: none;
+    background: #FFD700;
+    color: #2c3e56;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.hero-buttons .btn:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Hero search bar */
+.hero-search-form {
+    margin: 0 auto 30px;
+    max-width: 600px;
+}
+
+.hero-search-bar {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-search-bar input[type="text"] {
+    flex: 1;
+    padding: 14px 20px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    min-width: 0;
+}
+
+.hero-search-bar .btn {
+    border-radius: 0;
+    padding: 14px 24px;
+    font-size: 15px;
+    background: #FFD700;
+    color: #2c3e56;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.hero-search-bar .btn:hover {
+    background: #e6c200;
+    transform: none;
+}
+
+/* Stats section */
+.stats-section {
+    background: #ffffff;
+    padding: 50px 40px;
+}
+
+.stats-section .stats-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Featured scholarships */
+.featured-section {
+    background: #dce1e7;
+    padding: 60px 20px;
+}
+
+.section-title {
+    color: #2c3e56;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 1rem;
+}
+
+.featured-cta {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* Mission & Vision */
+.about, .mv {
+    padding: 40px;
+}
+
+.about {
+    background: #f4f6f8;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.about h2 {
+    color: #2c3e56;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.mv {
+    padding: 60px 40px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mv-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-top: 4px solid #FFD700;
+    flex: 1;
+    min-width: 260px;
+    max-width: 450px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mv-card h3 {
+    color: #2c3e56;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.mv-card p {
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* How It Works */
+.how-it-works {
+    background: #ffffff;
+    padding: 60px 20px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.step-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #f4f6f8;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 52px;
+    height: 52px;
+    background: #2c3e56;
+    color: #FFD700;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+}
+
+.step-card h4 {
+    color: #2c3e56;
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+}
+
+.step-card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* =============================================
+   BROWSE PAGE — browse.php
+   ============================================= */
+
+.browse-hero {
+    background: linear-gradient(135deg, #2c3e56 0%, #1a2638 100%);
+    padding: 50px 40px 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.browse-hero h2 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin: 0 0 8px;
+}
+
+.browse-hero p {
+    color: #ccd6e0;
+    margin: 0 0 28px;
+    font-size: 1rem;
+}
+
+.browse-search-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.browse-search-row {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.browse-search-row input[type="text"] {
+    flex: 1;
+    padding: 13px 18px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    min-width: 0;
+}
+
+.browse-search-row .btn {
+    border-radius: 0;
+    padding: 13px 24px;
+    background: #FFD700;
+    color: #2c3e56;
+    font-size: 15px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.browse-search-row .btn:hover {
+    background: #e6c200;
+    transform: none;
+}
+
+.browse-filter-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.browse-filter-row select {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+.browse-filter-row select option {
+    background: #2c3e56;
+    color: #ffffff;
+}
+
+
+/* =============================================
+   DELETE CONFIRMATION MODAL
+   (manage_providers, manage_scholarships)
+   ============================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 35px 30px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border-top: 4px solid #dc3545;
+}
+
+.modal-box h3 {
+    color: #2c3e56;
+    margin: 0 0 12px;
+    font-size: 1.2rem;
+}
+
+.modal-box p {
+    color: #555;
+    font-size: 15px;
+    margin: 0 0 10px;
+}
+
+.modal-warning {
+    font-size: 13px !important;
+    color: #888 !important;
+    font-style: italic;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.modal-actions .btn {
+    flex: 1;
+    text-align: center;
+    padding: 11px;
+}
+
+.modal-actions .btn-cancel {
+    flex: 1;
+    padding: 11px;
+    background: #f0f0f0;
+    color: #555;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-actions .btn-cancel:hover {
+    background: #e0e0e0;
+}
+
+/* =============================================
+   RESPONSIVE — Tablet (max-width: 1024px)
+   ============================================= */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px;
+    }
+
+    .student-dashboard {
+        padding: 35px 30px 50px;
+    }
+
+    .hero {
+        padding: 60px 40px;
+    }
+
+    .stats-section .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =============================================
+   RESPONSIVE — Mobile (max-width: 768px)
+   ============================================= */
+
+@media (max-width: 768px) {
+
+    /* Header — hamburger menu */
+    .header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0 5px;
+    }
+
+    .header nav.open {
+        display: flex;
+    }
+
+    .header nav a {
+        margin-left: 0;
+        padding: 10px 5px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+    }
+
+    /* Container */
+    .container {
+        padding: 20px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 50px 24px;
+    }
+
+    .hero h2 {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-search-bar {
+        flex-direction: column;
+        border-radius: 8px;
+        overflow: visible;
+        box-shadow: none;
+        gap: 10px;
+    }
+
+    .hero-search-bar input[type="text"] {
+        border-radius: 6px;
+        padding: 13px 16px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .hero-search-bar .btn {
+        border-radius: 6px;
+        padding: 13px;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        margin: 8px auto;
+        max-width: 280px;
+    }
+
+    /* Stats */
+    .stats-section {
+        padding: 30px 20px;
+    }
+
+    .stats-section .stats-grid,
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Homepage sections */
+    .featured-section,
+    .how-it-works {
+        padding: 40px 16px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Mission & Vision */
+    .mv {
+        padding: 40px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mv-card {
+        min-width: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Scholarship grid — single column */
+    .scholarship-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Student dashboard */
+    .student-dashboard {
+        padding: 24px 16px 40px;
+    }
+
+    .profile-prompt {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-prompt .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Browse hero */
+    .browse-hero {
+        padding: 36px 20px 30px;
+    }
+
+    .browse-hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .browse-search-row {
+        flex-direction: column;
+        border-radius: 8px;
+        overflow: visible;
+        box-shadow: none;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .browse-search-row input[type="text"] {
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .browse-search-row .btn {
+        border-radius: 6px;
+        padding: 13px;
+    }
+
+    .browse-filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .browse-filter-row select,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Filter bar */
+    .filter-bar {
+        padding: 16px;
+    }
+
+    .filter-form {
+        flex-direction: column;
+    }
+
+    .filter-form input[type="text"],
+    .filter-form select,
+    .filter-form .btn,
+    .filter-form .btn-cancel {
+        width: 100%;
+    }
+
+    /* Forms */
+    .form-card {
+        padding: 24px 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .checkbox-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Auth */
+    .auth-card {
+        padding: 28px 20px;
+    }
+
+    /* Tables */
+    .data-table th,
+    .data-table td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    /* Scholarship detail */
+    .scholarship-detail {
+        padding: 24px 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+
+/* =============================================
+   RESPONSIVE — Small Mobile (max-width: 480px)
+   ============================================= */
+
+@media (max-width: 480px) {
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .stats-grid,
+    .stats-section .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card h3 {
+        font-size: 2rem;
+    }
+
+    .form-card {
+        padding: 20px 16px;
+    }
+
+    .auth-card {
+        padding: 24px 16px;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .browse-hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+}
